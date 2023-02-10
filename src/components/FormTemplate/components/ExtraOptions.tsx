@@ -8,7 +8,7 @@ const ExtraOptions = () => {
         style={styles.extraSubmit}
         onPress={() => alert('facebook')}>
         <Image
-          source={require('src/assets/images/Vector.png')}
+          source={require('../../../assets/images/Vector.png')}
           style={styles.img}
         />
         <Text style={styles.submitText2}> Sign up with Facebook</Text>
@@ -17,7 +17,7 @@ const ExtraOptions = () => {
         style={styles.extraSubmit}
         onPress={() => alert('google')}>
         <Image
-          source={require('src/assets/images/google-login.png')}
+          source={require('../../../assets/images/google-login.png')}
           style={styles.img}
         />
         <Text style={styles.submitText2}> Sign up with Google</Text>

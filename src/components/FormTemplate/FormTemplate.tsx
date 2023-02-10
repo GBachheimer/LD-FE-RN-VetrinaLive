@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text, View } from 'src/components/Themed';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Text, View } from 'react-native';
 import Divider from './components/Divider';
 import FormHeader from './components/FormHeader';
 import ExtraOptions from './components/ExtraOptions';
 import Support from './components/Support';
-import { FormTemplateProps } from './types';
+import { FormTemplateProps } from './formTemplateTypes';
 import { styles } from './FormTemplate.style';
 
 const FormTemplate = (props: FormTemplateProps) => {
