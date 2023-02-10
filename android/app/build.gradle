@@ -1,9 +1,9 @@
 plugins {
   id 'com.android.application'
   id 'com.google.gms.google-services'
+  id 'com.facebook.react'
 }
 
-apply plugin: "com.facebook.react"
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 import com.android.build.OutputFile

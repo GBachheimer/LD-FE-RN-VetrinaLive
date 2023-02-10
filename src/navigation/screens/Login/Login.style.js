@@ -10,9 +10,11 @@ export const styles = StyleSheet.create({
   body: {
     flex: 9,
     width: '100%',
+    paddingTop: 10,
     alignItems: 'center',
     paddingLeft: '10%',
     paddingRight: '10%',
+    backgroundColor: 'white',
   },
   textInput: {
     width: '100%',

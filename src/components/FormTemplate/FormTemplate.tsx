@@ -35,7 +35,7 @@ const FormTemplate = (props: FormTemplateProps) => {
       {divider && <Divider />}
       {extraOptions && <ExtraOptions />}
       {footerText2 && (
-        <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
+        <TouchableOpacity onPress={() => navigation.navigate('ResetPassword')}>
           <Text style={styles.resetPass}>{footerText1}</Text>
         </TouchableOpacity>
       )}
