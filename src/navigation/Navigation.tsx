@@ -10,7 +10,7 @@ import DrawerNavigator from './DrawerNavigator';
 import RootNavigator from './RootNavigator';
 
 const Navigation = ({ colorScheme }: { colorScheme: ColorSchemeName }) => {
-  const user = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   return (
     <NavigationContainer

@@ -11,6 +11,7 @@ import Product from './screens/Product';
 import Plan from './screens/Plan';
 import Payments from './screens/Payments';
 import Admin from './screens/Admin';
+import { handleSignOut } from '../api/auth/handleSignOut';
 
 const Drawer = createDrawerNavigator();
 
@@ -22,7 +23,7 @@ const DrawerNavigator = () => {
         return (
           <DrawerContentScrollView {...props}>
             <DrawerItemList {...props} />
-            <DrawerItem label="Logout" onPress={()=> alert('signout')} />
+            <DrawerItem label="Logout" onPress={handleSignOut} />
           </DrawerContentScrollView>
         );
       }}

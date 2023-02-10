@@ -6,7 +6,7 @@ import { styles } from './Login.style';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
 import CompanyText from '../../../components/Header/CompanyText';
 import Header from '../../../components/Header/Header';
-// import { handleLogin } from '/api/auth/handleLogin';
+import { handleLogin } from '../../../api/auth/handleLogin';
 
 const Login = (props: LoginScreenProps) => {
   const [email, setEmail] = useState('');
@@ -37,7 +37,7 @@ const Login = (props: LoginScreenProps) => {
           title="Welcome"
           subtitle="Enter your email and password to enter your account."
           submitText="Login"
-          submitAction={() => alert('login')}
+          submitAction={handleLogin}
           divider={true}
           extraOptions={true}
           footerText1="Did you forget your password?"
