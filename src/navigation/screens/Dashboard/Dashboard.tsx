@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView } from 'react-native';
 import { styles } from './Dashboard.style';
 import SubHeader from './components/SubHeader';
 import Card from './components/Card';
@@ -9,7 +9,9 @@ import AdsCard from './components/AdsCard';
 
 const Dashboard = ({ navigation }: any) => {
   return (
-    <View style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}>
       <SubHeader />
       <Card />
       <Card />
@@ -19,7 +21,7 @@ const Dashboard = ({ navigation }: any) => {
       <AdsCard />
       <Card />
       <Card />
-    </View>
+    </ScrollView>
   );
 };
 

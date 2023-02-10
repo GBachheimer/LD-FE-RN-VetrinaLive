@@ -13,14 +13,14 @@ const ExtraOptions = () => {
           source={require('../../../assets/images/Vector.png')}
           style={styles.img}
         />
-        <Text style={styles.submitText2}> Sign up with Facebook</Text>
+        <Text style={styles.submitText2}> Sign in with Facebook</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.extraSubmit} onPress={handleGoogleSignin}>
         <Image
           source={require('../../../assets/images/google-login.png')}
           style={styles.img}
         />
-        <Text style={styles.submitText2}> Sign up with Google</Text>
+        <Text style={styles.submitText2}> Sign in with Google</Text>
       </TouchableOpacity>
     </>
   );

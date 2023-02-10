@@ -1,11 +1,11 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet, Text } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/Feather';
 
 const Support = () => {
   return (
     <TouchableOpacity style={styles.support}>
-      <Icon name="headset" size={30} color="#900" />
+      <Icon name="headphones" size={30} color="#103B66" style={styles.icon} />
       <Text style={styles.supportText}>Support</Text>
     </TouchableOpacity>
   );
@@ -40,6 +40,9 @@ const styles = StyleSheet.create({
   supportImg: {
     marginRight: 10,
   },
+  icon: {
+    marginRight: 8,
+  }
 });
 
 export default Support;
