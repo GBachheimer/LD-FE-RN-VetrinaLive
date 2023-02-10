@@ -31,7 +31,7 @@ const ResetPassword = ({navigation}: any) => {
           title="Forgot Password"
           subtitle="Enter your email and you'll receive an email to recover ypur password."
           submitText="Send email"
-          submitAction={() => handleResetPass(email)}
+          submitAction={() => handleResetPass(email, navigation)}
           divider={false}
           extraOptions={false}
           footerText1="Do you have an account?"
