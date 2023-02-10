@@ -22,7 +22,7 @@ const DrawerNavigator = () => {
         return (
           <DrawerContentScrollView {...props}>
             <DrawerItemList {...props} />
-            <DrawerItem label="Logout" onPress={handleSignOut} />
+            <DrawerItem label="Logout" onPress={()=> alert('signout')} />
           </DrawerContentScrollView>
         );
       }}
