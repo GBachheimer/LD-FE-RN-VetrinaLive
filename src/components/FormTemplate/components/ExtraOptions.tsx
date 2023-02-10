@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Image, StyleSheet, Text } from 'react-native';
+import { handleGoogleSignin } from '../../../api/auth/handleGoogleSignin';
 
 const ExtraOptions = () => {
   return (
@@ -13,9 +14,7 @@ const ExtraOptions = () => {
         />
         <Text style={styles.submitText2}> Sign up with Facebook</Text>
       </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.extraSubmit}
-        onPress={() => alert('google')}>
+      <TouchableOpacity style={styles.extraSubmit} onPress={handleGoogleSignin}>
         <Image
           source={require('../../../assets/images/google-login.png')}
           style={styles.img}
