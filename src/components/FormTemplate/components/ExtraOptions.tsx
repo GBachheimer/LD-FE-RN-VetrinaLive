@@ -1,13 +1,14 @@
 import React from 'react';
 import { TouchableOpacity, Image, StyleSheet, Text } from 'react-native';
 import { handleGoogleSignin } from '../../../api/auth/handleGoogleSignin';
+import { handleFacebookSignin } from '../../../api/auth/handleFacebookSignin';
 
 const ExtraOptions = () => {
   return (
     <>
       <TouchableOpacity
         style={styles.extraSubmit}
-        onPress={() => alert('facebook')}>
+        onPress={handleFacebookSignin}>
         <Image
           source={require('../../../assets/images/Vector.png')}
           style={styles.img}
