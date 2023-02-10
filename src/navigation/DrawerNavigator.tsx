@@ -6,7 +6,7 @@ import {
   DrawerItem,
 } from '@react-navigation/drawer';
 import { styles } from './DrawerNavigator.styles';
-import Dashboard from './screens/Dashboard';
+import Dashboard from './screens/Dashboard/Dashboard';
 import Product from './screens/Product';
 import Plan from './screens/Plan';
 import Payments from './screens/Payments';
