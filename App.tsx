@@ -1,29 +1,21 @@
 import React from 'react';
-import {SafeAreaView, useColorScheme, View, Text} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-// import Home from 'navigation/screens/Home';
-
-const Stack = createNativeStackNavigator();
+import 'react-native-gesture-handler';
+import { SafeAreaView, useColorScheme } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import Navigation from './src/navigation/Navigation';
 
 const App = (): JSX.Element => {
-  const isDarkMode = useColorScheme() === 'dark';
+  const colorScheme = useColorScheme();
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  const container = {
+    backgroundColor: colorScheme ? Colors.darker : Colors.lighter,
+    flex: 1,
   };
 
-  const Home = (): JSX.Element => (<View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}><Text style = {{color: 'black'}}>Test</Text></View>);
-
   return (
-    // <SafeAreaView style={backgroundStyle}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name='Home' component={Home} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    // </SafeAreaView>
+    <SafeAreaView style={container}>
+      <Navigation colorScheme={colorScheme} />
+    </SafeAreaView>
   );
 };
 
