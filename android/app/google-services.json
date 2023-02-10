@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "454225164497",
+    "project_id": "ld-fe-vetrinalive-ba06d",
+    "storage_bucket": "ld-fe-vetrinalive-ba06d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454225164497:android:c6d6763a3ccc0cd0a8edf0",
+        "android_client_info": {
+          "package_name": "com.react_native_vetrina"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454225164497-ljaib4bn6tgr6fmlq2cuncgsfelkhrj2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.react_native_vetrina",
+            "certificate_hash": "ec5edcc0afb060ef91465cc7d04755c245bf363c"
+          }
+        },
+        {
+          "client_id": "454225164497-u4fvu7tj2cpp54fm00purk7gk9u1lucb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBivZObR1TzlnYsce2Ibu2pHsfS3P7y2x4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454225164497-u4fvu7tj2cpp54fm00purk7gk9u1lucb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

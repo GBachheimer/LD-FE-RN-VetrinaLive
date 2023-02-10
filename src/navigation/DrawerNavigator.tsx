@@ -11,6 +11,7 @@ import Product from './screens/Product';
 import Plan from './screens/Plan';
 import Payments from './screens/Payments';
 import Admin from './screens/Admin';
+import { handleSignOut } from '../api/auth/handleSignOut';
 
 const Drawer = createDrawerNavigator();
 
