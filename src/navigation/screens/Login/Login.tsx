@@ -4,9 +4,9 @@ import FormTemplate from '../../../components/FormTemplate/FormTemplate';
 import { LoginScreenProps } from './loginTypes';
 import { styles } from './Login.style';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
-// import CompanyText from 'src/components/CompanyText';
+import CompanyText from '../../../components/Header/CompanyText';
+import Header from '../../../components/Header/Header';
 // import { handleLogin } from '/api/auth/handleLogin';
-// import Header from 'src/components/Header/Header';
 
 const Login = (props: LoginScreenProps) => {
   const [email, setEmail] = useState('');
@@ -28,6 +28,9 @@ const Login = (props: LoginScreenProps) => {
 
   return (
     <View style={styles.container}>
+      <Header>
+        <CompanyText />
+      </Header>
       <View style={styles.body}>
         <FormTemplate
           navigation={navigation}
