@@ -1,25 +1,31 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView } from 'react-native';
 import { styles } from './Dashboard.style';
 import SubHeader from './components/SubHeader';
-import Card from './components/Card';
-import NewsList from './components/NewsList';
-import SwipableCards from './components/SwipableCards';
+import NewsCard from './components/NewsCard';
+import ExtensionsMarketplaceCard from './components/ExtensionsMarketplaceCard';
 import AdsCard from './components/AdsCard';
+import ConfigureShopCard from './components/ConfigureShopCard';
+import VisitorsCard from './components/VisitorsCard';
+import OrdersCard from './components/OrdersCard';
+import SupportCard from './components/SupportCard';
+import InviteFriendsCard from './components/InviteFriendsCard';
 
 const Dashboard = ({ navigation }: any) => {
   return (
-    <View style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}>
       <SubHeader />
-      <Card />
-      <Card />
-      <Card />
-      <NewsList />
-      <SwipableCards />
+      <ConfigureShopCard />
+      <VisitorsCard />
+      <OrdersCard />
+      <NewsCard />
+      <ExtensionsMarketplaceCard />
       <AdsCard />
-      <Card />
-      <Card />
-    </View>
+      <SupportCard />
+      <InviteFriendsCard />
+    </ScrollView>
   );
 };
 
