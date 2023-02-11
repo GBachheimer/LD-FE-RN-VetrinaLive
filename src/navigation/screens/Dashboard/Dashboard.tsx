@@ -2,10 +2,12 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 import { styles } from './Dashboard.style';
 import SubHeader from './components/SubHeader';
-import Card from './components/Card';
 import NewsList from './components/NewsList';
 import SwipableCards from './components/SwipableCards';
 import AdsCard from './components/AdsCard';
+import ConfigureShopCard from './components/ConfigureShopCard';
+import VisitorsCard from './components/VisitorsCard';
+import OrdersCard from './components/OrdersCard';
 
 const Dashboard = ({ navigation }: any) => {
   return (
@@ -13,14 +15,12 @@ const Dashboard = ({ navigation }: any) => {
       style={styles.container}
       contentContainerStyle={styles.contentContainer}>
       <SubHeader />
-      <Card />
-      <Card />
-      <Card />
+      <ConfigureShopCard />
+      <VisitorsCard />
+      <OrdersCard />
       <NewsList />
       <SwipableCards />
       <AdsCard />
-      <Card />
-      <Card />
     </ScrollView>
   );
 };
