@@ -4,7 +4,7 @@ import { Text, TouchableWithoutFeedback, View } from 'react-native';
 import { styles } from './Card.style';
 
 type Props = {
-  children?: string | JSX.Element;
+  children?: JSX.Element | React.ReactNode | React.ReactElement;
   icon?: JSX.Element | undefined;
   title?: string | undefined;
   option?: string | JSX.Element | undefined;

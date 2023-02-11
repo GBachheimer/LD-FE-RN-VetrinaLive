@@ -3,7 +3,7 @@ import { ScrollView } from 'react-native';
 import { styles } from './Dashboard.style';
 import SubHeader from './components/SubHeader';
 import NewsCard from './components/NewsCard';
-import SwipableCards from './components/SwipableCards';
+import ExtensionsMarketplaceCard from './components/ExtensionsMarketplaceCard';
 import AdsCard from './components/AdsCard';
 import ConfigureShopCard from './components/ConfigureShopCard';
 import VisitorsCard from './components/VisitorsCard';
@@ -19,7 +19,7 @@ const Dashboard = ({ navigation }: any) => {
       <VisitorsCard />
       <OrdersCard />
       <NewsCard />
-      <SwipableCards />
+      <ExtensionsMarketplaceCard />
       <AdsCard />
     </ScrollView>
   );

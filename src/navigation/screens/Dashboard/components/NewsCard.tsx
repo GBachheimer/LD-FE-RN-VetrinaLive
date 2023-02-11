@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, Linking, View, Image } from 'react-native';
+import { StyleSheet, Linking, Image } from 'react-native';
 import Card from '../../../../components/Card/Card';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
