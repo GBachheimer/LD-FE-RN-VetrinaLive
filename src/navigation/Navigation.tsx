@@ -6,7 +6,7 @@ import {
 import { AuthContext } from '../context/AuthContext';
 import React, { useContext } from 'react';
 import { ColorSchemeName } from 'react-native';
-import DrawerNavigator from './DrawerNavigator';
+import DrawerNavigator from './DrawerNavigator/DrawerNavigator';
 import RootNavigator from './RootNavigator';
 
 const Navigation = ({ colorScheme }: { colorScheme: ColorSchemeName }) => {
