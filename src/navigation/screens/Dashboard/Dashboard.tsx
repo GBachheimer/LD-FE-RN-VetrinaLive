@@ -8,6 +8,8 @@ import AdsCard from './components/AdsCard';
 import ConfigureShopCard from './components/ConfigureShopCard';
 import VisitorsCard from './components/VisitorsCard';
 import OrdersCard from './components/OrdersCard';
+import SupportCard from './components/SupportCard';
+import InviteFriendsCard from './components/InviteFriendsCard';
 
 const Dashboard = ({ navigation }: any) => {
   return (
@@ -21,6 +23,8 @@ const Dashboard = ({ navigation }: any) => {
       <NewsCard />
       <ExtensionsMarketplaceCard />
       <AdsCard />
+      <SupportCard />
+      <InviteFriendsCard />
     </ScrollView>
   );
 };
