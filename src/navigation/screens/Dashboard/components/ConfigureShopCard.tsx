@@ -11,7 +11,8 @@ const ConfigureShopCard = () => {
       title="Configure your shop!"
       linkText="Complete the configuration"
       linkAction={() => Linking.openURL('http://google.com')}
-      linkIcon={<AntDesign name="arrowright" size={24} color="#21B8F9" />}>
+      linkIcon={<AntDesign name="arrowright" size={24} color="#21B8F9" />}
+      style={styles.cardStyle}>
       <>
         <View style={styles.percentageConatiner}>
           <Text style={styles.percentage}>0%</Text>
@@ -45,6 +46,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#7D8A99',
     padding: 10,
+  },
+  cardStyle: {
+    marginTop: 200,
   },
 });
 

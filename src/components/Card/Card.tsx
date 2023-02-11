@@ -12,6 +12,7 @@ type Props = {
   linkAction?: (event: GestureResponderEvent) => Promise<any> | undefined;
   linkIcon?: JSX.Element | undefined;
   backColor?: string | undefined;
+  style?: object;
 };
 
 const Card = ({
@@ -23,9 +24,10 @@ const Card = ({
   linkAction,
   linkIcon,
   backColor,
+  style,
 }: Props) => {
   return (
-    <View style={styles.container}>
+    <View style={{ ...styles.container, ...style }}>
       <TouchableWithoutFeedback>
         <View
           style={{
