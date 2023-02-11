@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 import { styles } from './Dashboard.style';
 import SubHeader from './components/SubHeader';
-import NewsList from './components/NewsList';
+import NewsCard from './components/NewsCard';
 import SwipableCards from './components/SwipableCards';
 import AdsCard from './components/AdsCard';
 import ConfigureShopCard from './components/ConfigureShopCard';
@@ -18,7 +18,7 @@ const Dashboard = ({ navigation }: any) => {
       <ConfigureShopCard />
       <VisitorsCard />
       <OrdersCard />
-      <NewsList />
+      <NewsCard />
       <SwipableCards />
       <AdsCard />
     </ScrollView>
