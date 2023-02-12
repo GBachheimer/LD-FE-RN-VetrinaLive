@@ -5,7 +5,7 @@ import { styles } from './DrawerNavigator.styles';
 import Dashboard from '../screens/Dashboard/Dashboard';
 import Product from '../screens/Products/Product';
 import Plan from '../screens/Plan';
-import Payments from '../screens/Payments';
+import Payments from '../screens/Payments/Payments';
 import Admin from '../screens/Admin';
 import DrawerContent from './components/DrawerContent';
 
