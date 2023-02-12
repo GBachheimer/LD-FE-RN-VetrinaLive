@@ -6,7 +6,7 @@ import Dashboard from '../screens/Dashboard/Dashboard';
 import Product from '../screens/Products/Product';
 import Plan from '../screens/Plan';
 import Payments from '../screens/Payments/Payments';
-import Admin from '../screens/Admin';
+import Orders from '../screens/Orders/Orders';
 import DrawerContent from './components/DrawerContent';
 
 const Drawer = createDrawerNavigator();
@@ -25,7 +25,7 @@ const DrawerNavigator = () => {
           headerRight: () => <HeaderRight />,
         })}>
         <Drawer.Screen name="Product" component={Product} />
-        <Drawer.Screen name="Admin" component={Admin} />
+        <Drawer.Screen name="Orders" component={Orders} />
       </Drawer.Group>
       <Drawer.Screen name="Payments" component={Payments} />
       <Drawer.Screen name="Plan" component={Plan} />
