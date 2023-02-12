@@ -2,10 +2,10 @@ import React from 'react';
 import { View } from 'react-native';
 import { styles } from './EmptyCard.style';
 
-const EmptyCard = ({ children }: any) => {
+const EmptyCard = ({ children, style }: any) => {
   return (
     <View style={styles.container}>
-      <View style={styles.mainCardView}>{children}</View>
+      <View style={{ ...styles.mainCardView, ...style }}>{children}</View>
     </View>
   );
 };
