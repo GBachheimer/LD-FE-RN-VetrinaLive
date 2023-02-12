@@ -3,7 +3,11 @@ import { View, Text, StyleSheet, Switch } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const ProductsHeader = () => {
+type Props = {
+  hanldeAddProduct: () => void | undefined;
+};
+
+const ProductsHeader = ({ hanldeAddProduct }: Props) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
@@ -23,7 +27,7 @@ const ProductsHeader = () => {
         </View>
       </View>
       <View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={hanldeAddProduct}>
           <MaterialIcons name="add" size={30} color="#fff" />
         </TouchableOpacity>
       </View>
