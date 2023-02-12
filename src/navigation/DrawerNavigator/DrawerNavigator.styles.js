@@ -7,6 +7,12 @@ export const styles = StyleSheet.create({
   title: {
     // marginLeft: -125, - for IOS
     fontSize: 20,
-    color: '#103B66'
+    color: '#103B66',
+  },
+  headerRight: {
+    flexDirection: 'row',
+  },
+  icon: {
+    marginRight: 20,
   },
 });

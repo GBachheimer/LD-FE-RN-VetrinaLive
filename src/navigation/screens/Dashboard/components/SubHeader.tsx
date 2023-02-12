@@ -10,7 +10,7 @@ const SubHeader = () => {
       colors={['#21B8F9', '#AED6F1']}
       style={styles.linearGradient}>
       <Text style={styles.welcome}>Welcome Mario!</Text>
-      <Text onPress={() => Linking.openURL('http://google.com')}>
+      <Text onPress={() => Linking.openURL('http://google.com')} style={styles.link}>
         <Text style={styles.storeLink}>app.vetrinalive.com/mario-store</Text>
         <Icon name="external-link" size={24} color="#fff" />
       </Text>
@@ -35,7 +35,11 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     width: '100%',
     alignItems: 'flex-start',
-    zIndex: 0,
+    position: 'absolute',
+    height: 300,
+  },
+  link: {
+    marginTop: 30,
   },
 });
 
