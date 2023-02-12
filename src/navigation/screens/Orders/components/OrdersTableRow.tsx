@@ -9,6 +9,7 @@ type Props = {
   state?: string | undefined;
   style?: object | undefined;
   stateStyle?: object | undefined;
+  openDrawer?: (() => void) | undefined;
 };
 
 const OrdersTableRow = ({
@@ -17,6 +18,7 @@ const OrdersTableRow = ({
   state,
   style,
   stateStyle,
+  openDrawer,
 }: Props) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   let color = '';
@@ -55,7 +57,9 @@ const OrdersTableRow = ({
         <Text style={style ? style : styles.text}>{name}</Text>
       </View>
       <View style={styles.box3}>
-        <TouchableOpacity style={{ ...styles.button, backgroundColor: color }}>
+        <TouchableOpacity
+          style={{ ...styles.button, backgroundColor: color }}
+          onPress={openDrawer}>
           <Text style={stateStyle ? stateStyle : styles.buttonText}>
             {state}
           </Text>
