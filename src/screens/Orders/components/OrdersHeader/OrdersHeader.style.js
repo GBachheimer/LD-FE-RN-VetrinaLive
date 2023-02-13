@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: colors.light.grey,
+    backgroundColor: colors.light.lightBlue,
     borderRadius: 10,
   },
   title: {

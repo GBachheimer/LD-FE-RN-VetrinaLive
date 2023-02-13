@@ -21,10 +21,10 @@ const ProductsHeader = ({ hanldeAddProduct }: Props) => {
         <View style={styles.toggle}>
           <Switch
             trackColor={{
-              false: colors.light.strongGrey,
+              false: colors.light.grey,
               true: colors.light.lightBlue,
             }}
-            thumbColor={isEnabled ? colors.light.blue : colors.light.grey}
+            thumbColor={isEnabled ? colors.light.blue : colors.light.strongGrey}
             ios_backgroundColor={colors.light.text}
             onValueChange={toggleSwitch}
             value={isEnabled}

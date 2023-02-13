@@ -1,21 +1,22 @@
 import auth from '@react-native-firebase/auth';
+import { Alert } from 'react-native';
 
 export const handleResetPass = (email: string, navigation: any): void => {
   auth()
     .sendPasswordResetEmail(email)
     .then(() => {
       navigation.navigate('Login');
-      alert('Email sent!');
+      Alert.alert('Email sent!');
     })
     .catch(error => {
       const errorCode = error.code;
-      alert('Something went wrong!');
+      Alert.alert('Something went wrong!');
       if (
         errorCode === 'auth/missing-email' ||
         errorCode === 'auth/invalid-email' ||
         errorCode === 'auth/user-not-found'
       ) {
-        alert('Please provide a valid email address!');
+        Alert.alert('Please provide a valid email address!');
       }
     });
 };

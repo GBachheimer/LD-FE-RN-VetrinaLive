@@ -31,7 +31,7 @@ export default {
     red: '#F33451',
     blue: '#21B8F9',
     green: '#00C48C',
-    grey: '#0A254052',
+    grey: '#0A25405',
     orange: '#FFA26B',
     wak: '#00C48C',
     lightGreen: '#E0FFF6',

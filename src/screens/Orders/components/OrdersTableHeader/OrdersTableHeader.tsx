@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, Text } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import MenuArrows from 'src/components/MenuArrows';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { styles } from './OrdersTableHeader.style';
 
-const OrdersTableHeader = () => {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+type Props = {
+  handleAllCheckbox: () => void;
+  toggleCheckBox: boolean | undefined;
+};
 
+const OrdersTableHeader = ({ handleAllCheckbox, toggleCheckBox }: Props) => {
   return (
     <View style={styles.row}>
       <View style={styles.box1}>
         <CheckBox
           disabled={false}
           value={toggleCheckBox}
-          onValueChange={(
-            newValue: boolean | ((prevState: boolean) => boolean),
-          ) => setToggleCheckBox(newValue)}
+          onValueChange={handleAllCheckbox}
         />
         <TouchableOpacity style={styles.touchArea}>
           <Text style={styles.header1}>#</Text>

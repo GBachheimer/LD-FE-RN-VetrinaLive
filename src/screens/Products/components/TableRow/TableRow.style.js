@@ -31,5 +31,6 @@ export const styles = StyleSheet.create({
     color: colors.light.newText,
     fontSize: 18,
     marginLeft: 15,
+    width: 120,
   },
 });

@@ -4,7 +4,7 @@ import colors from 'src/constants/colors';
 export const styles = StyleSheet.create({
   container: {
     height: 150,
-    padding: 20,
+    padding: 10,
     zIndex: 1,
     alignItems: 'center',
     width: '90%',
@@ -25,17 +25,22 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     color: colors.light.blue,
     padding: 2,
+    width: 150,
+    height: 30,
   },
   subtitle: {
     fontSize: 16,
     color: colors.light.newText,
     padding: 2,
+    width: 230,
+    height: 50,
   },
   timetoread: {
     fontSize: 12,
     color: colors.light.grey,
     textDecorationLine: 'underline',
     padding: 2,
+    width: 150,
   },
   body: {
     padding: 10,

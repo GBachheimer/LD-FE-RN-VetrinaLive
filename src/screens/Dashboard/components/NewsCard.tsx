@@ -1,12 +1,27 @@
-import React from 'react';
-import { StyleSheet, Linking, Image } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Linking, Image, ActivityIndicator } from 'react-native';
 import Card from 'src/components/Card/Card';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import ImageCard from 'src/components/ImageCard/ImageCard';
 import colors from 'src/constants/colors';
+import { getNews } from 'src/api/getNews';
+
+type NewsItem = {
+  publishedAt: string | undefined;
+  urlToImage: string | undefined;
+  title: string | undefined;
+  description: string | undefined;
+};
 
 const NewsCard = () => {
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    getNews(setData, setLoading);
+  }, []);
+
   return (
     <Card
       icon={
@@ -18,19 +33,35 @@ const NewsCard = () => {
       linkIcon={
         <Feather name="external-link" size={24} color={colors.light.blue} />
       }>
-      <ImageCard
-        image={
-          <Image
-            style={styles.image}
-            source={{
-              uri: 'https://reactnative.dev/img/tiny_logo.png',
-            }}
-          />
-        }
-        title="E-COMMERCE TIPS"
-        subTitle="13 tips on how to write a bussiness plan with success"
-        timeToRead="time to read: 5 min"
-      />
+      <>
+        {isLoading ? (
+          <ActivityIndicator />
+        ) : (
+          <>
+            {data.map((newsItem: NewsItem, index) => {
+              if (index > 5 || !newsItem.urlToImage) {
+                return;
+              }
+              return (
+                <ImageCard
+                  key={newsItem.publishedAt}
+                  image={
+                    <Image
+                      style={styles.image}
+                      source={{
+                        uri: newsItem.urlToImage,
+                      }}
+                    />
+                  }
+                  title={newsItem.title}
+                  subTitle={newsItem.description}
+                  timeToRead={newsItem.publishedAt}
+                />
+              );
+            })}
+          </>
+        )}
+      </>
     </Card>
   );
 };

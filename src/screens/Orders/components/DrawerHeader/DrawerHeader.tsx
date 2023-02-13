@@ -4,10 +4,12 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import colors from 'src/constants/colors';
 import { styles } from './DrawerHeader.style';
 
-const DrawerHeader = ({ closeDrawer }: any) => {
+const DrawerHeader = ({ closeDrawer, orderNumber }: any) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.orderNr}>Order: #2222</Text>
+      <Text style={styles.orderNr}>
+        Order: {orderNumber ? orderNumber : '#2222'}
+      </Text>
       <TouchableOpacity style={styles.print}>
         <Image
           style={styles.tinyLogo}

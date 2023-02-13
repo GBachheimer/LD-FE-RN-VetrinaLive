@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import CheckBox from '@react-native-community/checkbox';
 import colors from 'src/constants/colors';
@@ -13,6 +13,8 @@ type Props = {
   style?: object | undefined;
   stateStyle?: object | undefined;
   openDrawer?: (() => void) | undefined;
+  checkValue?: boolean | undefined;
+  handleUser?: (id: number) => void | undefined;
 };
 
 const OrdersTableRow = ({
@@ -22,8 +24,14 @@ const OrdersTableRow = ({
   style,
   stateStyle,
   openDrawer,
+  checkValue,
+  handleUser,
 }: Props) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
+
+  useEffect(() => {
+    setToggleCheckBox(checkValue);
+  }, [checkValue]);
 
   return (
     <View style={styles.row}>
@@ -42,8 +50,14 @@ const OrdersTableRow = ({
       </View>
       <View style={styles.box3}>
         <TouchableOpacity
-          style={{ ...styles.button, backgroundColor: selectColor(state) }}
-          onPress={openDrawer}>
+          style={{
+            ...styles.button,
+            backgroundColor: selectColor(state),
+          }}
+          onPress={() => {
+            handleUser();
+            openDrawer();
+          }}>
           <Text style={stateStyle ? stateStyle : styles.buttonText}>
             {state}
           </Text>

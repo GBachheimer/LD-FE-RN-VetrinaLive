@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     borderRadius: 0,
   },
   navigationContainer: {
-    backgroundColor: colors.light.grey,
+    backgroundColor: colors.light.orange,
   },
   paragraph: {
     padding: 16,

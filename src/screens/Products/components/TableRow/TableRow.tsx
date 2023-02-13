@@ -24,7 +24,9 @@ const TableRow = ({ image, name, price, style }: Props) => {
             style={styles.avatar}
           />
         )}
-        <Text style={style ? style : styles.text}>{name}</Text>
+        <Text numberOfLines={1} style={style ? style : styles.text}>
+          {name}
+        </Text>
       </View>
       <View style={styles.box2}>
         <Text style={style ? style : styles.text}>{price}</Text>

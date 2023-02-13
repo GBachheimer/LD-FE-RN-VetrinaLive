@@ -11,14 +11,15 @@ import colors from 'src/constants/colors';
 type Props = {
   navigation?: any;
   closeDrawer?: () => void | undefined;
+  user?: object | undefined;
 };
 
 const Tab = createMaterialTopTabNavigator();
 
-const DrawerTabs = ({ navigation, closeDrawer }: Props) => {
+const DrawerTabs = ({ navigation, closeDrawer, user }: Props) => {
   return (
     <View style={styles.container}>
-      <DrawerHeader closeDrawer={closeDrawer} />
+      <DrawerHeader closeDrawer={closeDrawer} orderNumber={user.id} />
       <Tab.Navigator
         initialRouteName="OrderInfo"
         screenOptions={{
@@ -26,8 +27,10 @@ const DrawerTabs = ({ navigation, closeDrawer }: Props) => {
           tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarStyle: styles.tabBarStyle,
         }}>
-        <Tab.Screen name="OrderInfo">
-          {props => <OrderInfoTab {...props} closeDrawer={closeDrawer} />}
+        <Tab.Screen name="Order Info">
+          {props => (
+            <OrderInfoTab {...props} closeDrawer={closeDrawer} user={user} />
+          )}
         </Tab.Screen>
         <Tab.Screen name="Products">
           {props => <ProductsTab {...props} closeDrawer={closeDrawer} />}

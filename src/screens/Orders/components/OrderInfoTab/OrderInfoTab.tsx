@@ -5,20 +5,24 @@ import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { getCurrentDate } from 'src/utils/getCurrentTime';
 import { styles } from './OrderInfoTab.style';
+import { allOrdersStatus } from 'src/utils/getRandomStatus';
+import { selectColor } from 'src/utils/selectColor';
 
-const OrderInfoTab = ({ closeDrawer }: any) => {
+const OrderInfoTab = ({ closeDrawer, user }: any) => {
   return (
     <ScrollView style={[styles.container]}>
       <View style={styles.section}>
         <Text style={styles.date}>{getCurrentDate()}</Text>
         <Text style={styles.sectionTitle}>Client</Text>
-        <Text style={styles.sectionText}>name</Text>
-        <Text style={styles.link}>Email</Text>
+        <Text style={styles.sectionText}>
+          {user ? user.firstName + ' ' + user.lastName : 'Name'}
+        </Text>
+        <Text style={styles.link}>{user ? user.email : 'Email'}</Text>
         <View style={styles.rowSection}>
           <Text style={styles.sectionText}>Phone: </Text>
-          <Text style={styles.link}>+4023223131</Text>
+          <Text style={styles.link}>{user ? user.phone : 'Number'}</Text>
         </View>
-        <Text style={styles.sectionText}>Tax Code: RSSMAR22T33M123K</Text>
+        <Text style={styles.sectionText}>Tax Code: {user.ssn}</Text>
         <View style={styles.rowSection}>
           <Image
             style={styles.tinyLogo}
@@ -42,14 +46,16 @@ const OrderInfoTab = ({ closeDrawer }: any) => {
         <View style={styles.borders}>
           <Text style={styles.sectionTitle}>Shipping address</Text>
           <Text style={styles.address}>
-            Via Roma, 59, Torre del Greco, NA, 80059
+            {user
+              ? user.address.address
+              : 'Via Roma, 59, Torre del Greco, NA, 80059'}
           </Text>
         </View>
         <View style={styles.shippingSubSection}>
           <Text style={styles.secondaryText}>Shipping info</Text>
           <Text style={styles.sectionText}>Courier Name: Fedex</Text>
           <Text style={styles.sectionText}>
-            Order number/Link: FR12342123 2314
+            Order number/Link: {user.bank.cardNumber}
           </Text>
           <View style={styles.rowSection}>
             <Feather name="info" size={24} color="#103B66" />
@@ -90,8 +96,14 @@ const OrderInfoTab = ({ closeDrawer }: any) => {
             € 49,00
           </Text>
         </View>
-        <TouchableOpacity style={styles.shippingStatus}>
-          <Text style={styles.shippingStatusText}>Shipped</Text>
+        <TouchableOpacity
+          style={{
+            ...styles.shippingStatus,
+            backgroundColor: selectColor(allOrdersStatus[user.id]),
+          }}>
+          <Text style={styles.shippingStatusText}>
+            {allOrdersStatus[user.id]}
+          </Text>
           <MaterialIcons name="keyboard-arrow-down" size={24} color="#fff" />
         </TouchableOpacity>
       </View>

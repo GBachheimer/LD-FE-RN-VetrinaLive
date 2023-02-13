@@ -16,9 +16,15 @@ const ImageCard = ({ image, title, subTitle, timeToRead }: Props) => {
         <View style={styles.mainCardView}>
           {image}
           <View style={styles.body}>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.subtitle}>{subTitle}</Text>
-            <Text style={styles.timetoread}>{timeToRead}</Text>
+            <Text numberOfLines={1} style={styles.title}>
+              {title}
+            </Text>
+            <Text numberOfLines={2} style={styles.subtitle}>
+              {subTitle}
+            </Text>
+            <Text numberOfLines={1} style={styles.timetoread}>
+              {timeToRead}
+            </Text>
           </View>
         </View>
       </TouchableWithoutFeedback>
