@@ -2,12 +2,12 @@ import React, { createContext, useState, useEffect } from 'react';
 import auth from '@react-native-firebase/auth';
 
 type authContextType = {
-  user?: boolean;
+  user?: any;
 };
 
 export const AuthContext = createContext<authContextType>({ user: false });
 
-export const AuthProvider = ({ children }: React.ReactNode) => {
+export const AuthProvider = ({ children }: any): JSX.Element | null => {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
 

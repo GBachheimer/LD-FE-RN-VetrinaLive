@@ -2,11 +2,11 @@ import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HeaderRight from './components/HeaderRight';
 import { styles } from './DrawerNavigator.styles';
-import Dashboard from '../screens/Dashboard/Dashboard';
-import Product from '../screens/Products/Product';
-import Subscription from '../screens/Subscription/Subscription';
-import Payments from '../screens/Payments/Payments';
-import Orders from '../screens/Orders/Orders';
+import Dashboard from 'src/screens/Dashboard/Dashboard';
+import Product from 'src/screens/Products/Product';
+import Subscription from 'src/screens/Subscription/Subscription';
+import Payments from 'src/screens/Payments/Payments';
+import Orders from 'src/screens/Orders/Orders';
 import DrawerContent from './components/DrawerContent';
 
 const Drawer = createDrawerNavigator();
