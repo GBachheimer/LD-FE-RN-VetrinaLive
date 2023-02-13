@@ -2,6 +2,7 @@ import React from 'react';
 import { GestureResponderEvent } from 'react-native';
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
 import { styles } from './Card.style';
+import colors from 'src/constants/colors';
 
 type Props = {
   children?: JSX.Element | React.ReactNode | React.ReactElement;
@@ -32,7 +33,7 @@ const Card = ({
         <View
           style={{
             ...styles.mainCardView,
-            backgroundColor: backColor ? backColor : '#fff',
+            backgroundColor: backColor ? backColor : colors.light.white,
           }}>
           {title && (
             <View style={styles.row}>

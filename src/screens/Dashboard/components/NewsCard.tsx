@@ -4,15 +4,20 @@ import Card from 'src/components/Card/Card';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import ImageCard from 'src/components/ImageCard/ImageCard';
+import colors from 'src/constants/colors';
 
 const NewsCard = () => {
   return (
     <Card
-      icon={<AntDesign name="filetext1" size={28} color="#103B66" />}
+      icon={
+        <AntDesign name="filetext1" size={28} color={colors.light.newText} />
+      }
       title="Latest news"
       linkText="Visit our blog"
       linkAction={() => Linking.openURL('http://google.com')}
-      linkIcon={<Feather name="external-link" size={24} color="#21B8F9" />}>
+      linkIcon={
+        <Feather name="external-link" size={24} color={colors.light.blue} />
+      }>
       <ImageCard
         image={
           <Image

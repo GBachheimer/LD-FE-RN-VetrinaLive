@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Header from 'src/components/Header/Header';
-import CompanyText from 'src/components/Header/CompanyText';
+import Header from 'src/components/Header/Header/Header';
+import CompanyText from 'src/components/Header/CompanyText/CompanyText';
 import FormTemplate from 'src/components/FormTemplate/FormTemplate';
 import {
   TextInput,

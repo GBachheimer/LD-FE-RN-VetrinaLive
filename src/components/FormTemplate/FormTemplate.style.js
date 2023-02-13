@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
+import colors from 'src/constants/colors';
 
 export const styles = StyleSheet.create({
   submit: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#21B8F9',
+    backgroundColor: colors.light.blue,
     borderRadius: 8,
     marginTop: 10,
     width: '100%',
@@ -14,7 +15,7 @@ export const styles = StyleSheet.create({
     color: 'white',
   },
   redirect: {
-    color: '#21B8F9',
+    color: colors.light.blue,
   },
   formFooter: {
     alignItems: 'center',
@@ -25,6 +26,6 @@ export const styles = StyleSheet.create({
   },
   resetPass: {
     marginTop: 20,
-    color: '#21B8F9',
+    color: colors.light.blue,
   },
 });

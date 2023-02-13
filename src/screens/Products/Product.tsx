@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import ProductsHeader from './components/ProductsHeader';
-import ProductsTable from './components/ProductsTable';
+import ProductsHeader from './components/ProductsHeader/ProductsHeader';
+import ProductsTable from './components/ProductsTable/ProductsTable';
 import NewProduct from './components/NewProduct/NewProduct';
 
 const Product = ({ navigation }: any) => {

@@ -1,11 +1,11 @@
 import React, { useRef, useState, useLayoutEffect } from 'react';
 import { DrawerLayoutAndroid, StyleSheet, View } from 'react-native';
 import EmptyCard from 'src/components/EmptyCard/EmptyCard';
-import OrdersHeader from './components/OrdersHeader';
-import OrdersTableRow from './components/OrdersTableRow';
-import OrdersTableHeader from './components/OrdersTableHeader';
+import OrdersHeader from './components/OrdersHeader/OrdersHeader';
+import OrdersTableRow from './components/OrdersTableRow/OrdersTableRow';
+import OrdersTableHeader from './components/OrdersTableHeader/OrdersTableHeader';
 import { ScrollView } from 'react-native-gesture-handler';
-import DrawerTabs from './components/DrawerTabs';
+import DrawerTabs from './components/DrawerTabs/DrawerTabs';
 
 const Orders = ({ navigation }: any) => {
   const drawer = useRef<DrawerLayoutAndroid>(null);

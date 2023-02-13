@@ -3,7 +3,7 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
-import { handleSignOut } from '../../../api/auth/handleSignOut';
+import { handleSignOut } from 'src/api/auth/handleSignOut';
 import React from 'react';
 
 const DrawerContent = ({ passProps }: any) => {

@@ -1,13 +1,13 @@
 import { StyleSheet } from 'react-native';
+import colors from 'src/constants/colors';
 
 export const styles = StyleSheet.create({
   menuIcon: {
     marginLeft: 20,
   },
   title: {
-    // marginLeft: -125, - for IOS
     fontSize: 20,
-    color: '#103B66',
+    color: colors.light.newText,
   },
   headerRight: {
     flexDirection: 'row',

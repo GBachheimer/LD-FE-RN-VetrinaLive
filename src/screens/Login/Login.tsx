@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { TextInput, View } from 'react-native';
 import FormTemplate from 'src/components/FormTemplate/FormTemplate';
-import { LoginScreenProps } from './loginTypes';
 import { styles } from './Login.style';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
-import CompanyText from 'src/components/Header/CompanyText';
-import Header from 'src/components/Header/Header';
+import CompanyText from 'src/components/Header/CompanyText/CompanyText';
+import Header from 'src/components/Header/Header/Header';
 import { handleLogin } from 'src/api/auth/handleLogin';
+
+type LoginScreenProps = {
+  navigation: any;
+};
 
 const Login = (props: LoginScreenProps) => {
   const [email, setEmail] = useState('');

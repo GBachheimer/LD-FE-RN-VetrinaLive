@@ -1,9 +1,9 @@
 import React from 'react';
 import { TouchableOpacity, Text, View } from 'react-native';
-import Divider from './components/Divider';
-import FormHeader from './components/FormHeader';
-import ExtraOptions from './components/ExtraOptions';
-import Support from './components/Support';
+import Divider from './components/Divider/Divider';
+import FormHeader from './components/FormHeader/FormHeader';
+import ExtraOptions from './components/ExtraOptions/ExtraOptions';
+import Support from './components/Support/Support';
 import { FormTemplateProps } from './formTemplateTypes';
 import { styles } from './FormTemplate.style';
 

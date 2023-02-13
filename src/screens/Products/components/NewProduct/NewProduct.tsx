@@ -1,9 +1,11 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import InfoTab from './components/InfoTab';
-import NewProductHeader from './components/NewProductHeader';
+import NewProductHeader from './components/NewProductHeader/NewProductHeader';
 import VariantsTab from './components/VariantsTab';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { styles } from './NewProduct.style';
+import colors from 'src/constants/colors';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -14,7 +16,7 @@ const NewProduct = ({ hanldeAddProduct }: any) => {
       <Tab.Navigator
         initialRouteName="Info"
         screenOptions={{
-          tabBarActiveTintColor: '#007AFF',
+          tabBarActiveTintColor: colors.light.blue,
           tabBarLabelStyle: { fontSize: 12 },
           tabBarStyle: styles.tabBarStyle,
         }}>
@@ -24,17 +26,5 @@ const NewProduct = ({ hanldeAddProduct }: any) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  tabBarStyle: {
-    backgroundColor: '#F2F2F2',
-    marginLeft: 15,
-    marginRight: 100,
-    elevation: 0,
-  },
-});
 
 export default NewProduct;

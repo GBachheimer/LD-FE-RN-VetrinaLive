@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from 'src/constants/colors';
 
 export const styles = StyleSheet.create({
   container: {
@@ -6,7 +7,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
-    color: '#103B66',
+    color: colors.light.newText,
     width: '100%',
     padding: 15,
   },
@@ -19,7 +20,7 @@ export const styles = StyleSheet.create({
   },
   optionName: {
     fontSize: 24,
-    color: '#103B66',
+    color: colors.light.newText,
     width: '100%',
     padding: 10,
     paddingLeft: 25,
@@ -27,13 +28,13 @@ export const styles = StyleSheet.create({
   button: {
     padding: 10,
     height: 50,
-    backgroundColor: '#E0FFF6',
+    backgroundColor: colors.light.lightGreen,
     justifyContent: 'center',
     textAlign: 'center',
     borderRadius: 10,
   },
   buttonText: {
-    color: '#00C48C',
+    color: colors.light.wak,
     fontSize: 16,
     width: '100%',
     textAlign: 'center',
