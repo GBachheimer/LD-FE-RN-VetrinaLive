@@ -1,11 +1,10 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 const ShippingTab = ({ closeDrawer }: any) => {
   return (
     <View style={[styles.container, styles.navigationContainer]}>
       <Text style={styles.paragraph}>Shipping</Text>
-      <Button title="Close drawer" onPress={closeDrawer} />
     </View>
   );
 };

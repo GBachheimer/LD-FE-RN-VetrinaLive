@@ -1,5 +1,5 @@
 import EmptyCard from '../../../components/EmptyCard/EmptyCard';
-import React, { useRef } from 'react';
+import React, { useRef, useState, useLayoutEffect } from 'react';
 import { DrawerLayoutAndroid, StyleSheet, View } from 'react-native';
 import OrdersHeader from './components/OrdersHeader';
 import OrdersTableRow from './components/OrdersTableRow';
@@ -9,13 +9,20 @@ import DrawerTabs from './components/DrawerTabs';
 
 const Orders = ({ navigation }: any) => {
   const drawer = useRef<DrawerLayoutAndroid>(null);
+  const [header, setHeader] = useState(false);
 
   const openDrawer = () => {
     drawer.current?.openDrawer();
+    setHeader(true);
   };
   const closeDrawer = () => {
     drawer.current?.closeDrawer();
+    setHeader(false);
   };
+
+  useLayoutEffect(() => {
+    navigation.setOptions({ headerShown: header ? false : true });
+  }, [header, navigation]);
 
   return (
     <DrawerLayoutAndroid

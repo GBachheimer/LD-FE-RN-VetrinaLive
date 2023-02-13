@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import OrderInfoTab from './OrderInfoTab';
 import ProductsTab from './ProductsTab';
 import ShippingTab from './ShippingTab';
+import DrawerHeader from './DrawerHeader';
 
 type Props = {
   navigation?: any;
@@ -13,19 +14,14 @@ type Props = {
 const Tab = createMaterialTopTabNavigator();
 
 const DrawerTabs = ({ navigation, closeDrawer }: Props) => {
-  useEffect(() => {
-    navigation.setOptions({
-      drawerItemStyle: { display: 'none' },
-    });
-  }, [navigation]);
   return (
     <View style={styles.container}>
-      {/* <NewProductHeader hanldeAddProduct={hanldeAddProduct} /> */}
+      <DrawerHeader closeDrawer={closeDrawer} />
       <Tab.Navigator
         initialRouteName="OrderInfo"
         screenOptions={{
           tabBarActiveTintColor: '#007AFF',
-          tabBarLabelStyle: { fontSize: 12 },
+          tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarStyle: styles.tabBarStyle,
         }}>
         <Tab.Screen name="OrderInfo">
@@ -45,10 +41,16 @@ const DrawerTabs = ({ navigation, closeDrawer }: Props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 20,
   },
   tabBarStyle: {
-    backgroundColor: '#F2F2F2',
+    backgroundColor: '#fff',
     elevation: 0,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  tabBarLabelStyle: {
+    color: '#103B66',
+    fontSize: 14,
   },
 });
 

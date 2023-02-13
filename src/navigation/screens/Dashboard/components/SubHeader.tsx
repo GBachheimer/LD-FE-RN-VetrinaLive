@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
   linearGradient: {
     paddingLeft: 20,
     paddingRight: 15,
-    borderRadius: 5,
     width: '100%',
     alignItems: 'flex-start',
     position: 'absolute',
