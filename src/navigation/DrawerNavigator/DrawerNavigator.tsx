@@ -14,7 +14,7 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
-      initialRouteName="Login"
+      initialRouteName="Dashboard"
       drawerContent={props => <DrawerContent passProps={props} />}
       screenOptions={() => ({
         headerTitleStyle: { ...styles.title },
