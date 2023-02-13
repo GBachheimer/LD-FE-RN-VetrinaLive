@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -26,11 +26,21 @@ const OrderInfoTab = ({ closeDrawer }: any) => {
         </View>
         <Text style={styles.sectionText}>Tax Code: RSSMAR22T33M123K</Text>
         <View style={styles.rowSection}>
-          <Text>image</Text>
+          <Image
+            style={styles.tinyLogo}
+            source={{
+              uri: 'https://seeklogo.com/images/W/whatsapp-logo-33F6A82887-seeklogo.com.png',
+            }}
+          />
           <Text style={styles.whatsapp}>Contact on Whatsapp</Text>
         </View>
         <View style={styles.rowSection}>
-          <Text>image</Text>
+          <Image
+            style={styles.tinyLogo}
+            source={{
+              uri: 'https://cdn-icons-png.flaticon.com/512/2111/2111646.png',
+            }}
+          />
           <Text style={styles.link}>Contact on Telegram</Text>
         </View>
       </View>
@@ -193,6 +203,11 @@ const styles = StyleSheet.create({
   },
   total: {
     fontWeight: 'bold',
+  },
+  tinyLogo: {
+    width: 25,
+    height: 25,
+    marginRight: 10,
   },
 });
 
