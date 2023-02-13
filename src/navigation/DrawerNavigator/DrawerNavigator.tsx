@@ -4,7 +4,7 @@ import HeaderRight from './components/HeaderRight';
 import { styles } from './DrawerNavigator.styles';
 import Dashboard from '../screens/Dashboard/Dashboard';
 import Product from '../screens/Products/Product';
-import Plan from '../screens/Plan';
+import Subscription from '../screens/Subscription/Subscription';
 import Payments from '../screens/Payments/Payments';
 import Orders from '../screens/Orders/Orders';
 import DrawerContent from './components/DrawerContent';
@@ -28,7 +28,7 @@ const DrawerNavigator = () => {
         <Drawer.Screen name="Orders" component={Orders} />
       </Drawer.Group>
       <Drawer.Screen name="Payments" component={Payments} />
-      <Drawer.Screen name="Plan" component={Plan} />
+      <Drawer.Screen name="Subscription" component={Subscription} />
     </Drawer.Navigator>
   );
 };
