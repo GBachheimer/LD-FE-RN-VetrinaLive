@@ -55,7 +55,7 @@ const OrdersTableRow = ({
             backgroundColor: selectColor(state),
           }}
           onPress={() => {
-            handleUser();
+            handleUser(orderNumber);
             openDrawer();
           }}>
           <Text style={stateStyle ? stateStyle : styles.buttonText}>

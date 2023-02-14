@@ -1,3 +1,5 @@
+import { allOrdersStatus } from 'src/utils/getRandomStatus';
+
 export const getUsers = async (
   setData?: any,
   setLoading?: any,
@@ -7,11 +9,15 @@ export const getUsers = async (
   try {
     const response = await fetch('https://dummyjson.com/users');
     const json = await response.json();
+    const data = json.users;
+    for (let i = 0; i < data.length; ++i) {
+      data[i].status = allOrdersStatus[i];
+    }
     if (setData) {
-      setData(json.users);
-      setUser(json.users[0]);
+      setData(data);
+      setUser(data[0]);
     } else {
-      setUsers(json.users);
+      setUsers(data);
     }
   } catch (error) {
     console.error(error);

@@ -4,6 +4,7 @@ import { Alert } from 'react-native';
 export const handleResetPass = (email: string, navigation: any): void => {
   if (email === '') {
     Alert.alert('Please provide an email!');
+    return;
   }
   auth()
     .sendPasswordResetEmail(email)

@@ -8,12 +8,14 @@ import {
 import DrawerTabs from './components/DrawerTabs/DrawerTabs';
 import { getUsers } from 'src/api/getUsers';
 import Orders from './Orders';
+import { allOrdersStatus } from 'src/utils/getRandomStatus';
 
 export type User = {
   id: number;
   password: string;
   firstName: string;
   lastName: string;
+  status: string;
 };
 
 const AndroidDrawer = ({ navigation }: any) => {
@@ -27,6 +29,7 @@ const AndroidDrawer = ({ navigation }: any) => {
     password: '',
     firstName: '',
     lastName: '',
+    status: '',
   });
 
   const handleAllCheckbox = () => {
@@ -41,7 +44,8 @@ const AndroidDrawer = ({ navigation }: any) => {
     setHeader(false);
   };
   const handleUser = (id: number) => {
-    setUser(data[id - 1]);
+    const userFound = data.find(x => x.id === id);
+    setUser(userFound);
   };
 
   useEffect(() => {
@@ -72,10 +76,12 @@ const AndroidDrawer = ({ navigation }: any) => {
           )}>
           <Orders
             data={data}
+            allStatus={allOrdersStatus}
             handleUser={handleUser}
             handleAllCheckbox={handleAllCheckbox}
             toggleCheckBox={toggleCheckBox}
             openDrawer={openDrawer}
+            setData={setData}
           />
         </DrawerLayoutAndroid>
       )}
