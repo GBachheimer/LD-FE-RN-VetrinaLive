@@ -1,64 +1,37 @@
 import EmptyCard from 'src/components/EmptyCard/EmptyCard';
 import React from 'react';
 import { View, Text } from 'react-native';
-import Foundation from 'react-native-vector-icons/Foundation';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import Feather from 'react-native-vector-icons/Feather';
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
+import { TextInput } from 'react-native-gesture-handler';
 import { styles } from './GenInfoCard.style';
-import colors from 'src/constants/colors';
+import DescriptionIcons from './DescriptionIcons';
 
-const GenInfoCard = () => {
+type Props = {
+  product?: {
+    id?: number;
+    title?: string;
+    price?: string;
+    category?: string;
+    description?: string;
+    image?: string;
+  };
+};
+
+const GenInfoCard = ({ product }: Props) => {
   return (
     <EmptyCard>
       <Text style={styles.title}>General information</Text>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Product name</Text>
-        <TextInput style={styles.input} placeholder="product name" />
+        <TextInput
+          style={styles.input}
+          placeholder="product name"
+          value={product ? product.title : ''}
+        />
       </View>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Description</Text>
         <View style={styles.input}>
-          <View style={styles.descriptionOptions}>
-            <TouchableOpacity>
-              <Foundation
-                name="bold"
-                size={32}
-                color={colors.light.middleGrey}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <FontAwesome5
-                name="italic"
-                size={24}
-                color={colors.light.middleGrey}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <FontAwesome5
-                name="text-width"
-                size={24}
-                color={colors.light.middleGrey}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <FontAwesome5
-                name="underline"
-                size={24}
-                color={colors.light.middleGrey}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Feather name="menu" size={24} color={colors.light.middleGrey} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Feather
-                name="link-2"
-                size={24}
-                color={colors.light.middleGrey}
-              />
-            </TouchableOpacity>
-          </View>
+          <DescriptionIcons />
           <TextInput
             editable
             multiline
@@ -66,6 +39,7 @@ const GenInfoCard = () => {
             maxLength={5000}
             style={styles.descriptionBox}
             placeholder="Decription 0/5000"
+            value={product ? product.description : ''}
           />
         </View>
       </View>

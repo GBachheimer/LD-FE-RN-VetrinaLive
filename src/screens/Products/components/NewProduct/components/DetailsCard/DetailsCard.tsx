@@ -7,14 +7,29 @@ import { TextInput } from 'react-native-gesture-handler';
 import { styles } from './DetailsCard.style';
 import colors from 'src/constants/colors';
 
-const DetailsCard = () => {
+type Props = {
+  product?: {
+    id?: number;
+    title?: string;
+    price?: string;
+    category?: string;
+    description?: string;
+    image?: string;
+  };
+};
+
+const DetailsCard = ({ product }: Props) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <EmptyCard>
       <Text style={styles.title}>Details</Text>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Category</Text>
-        <TextInput style={styles.input} placeholder="Select category" />
+        <TextInput
+          style={styles.input}
+          placeholder="Select category"
+          value={product ? product.category : 'Select category'}
+        />
       </View>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Product code / SKU </Text>

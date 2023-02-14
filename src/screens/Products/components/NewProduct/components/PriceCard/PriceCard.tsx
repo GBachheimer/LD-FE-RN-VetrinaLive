@@ -7,7 +7,18 @@ import { TextInput } from 'react-native-gesture-handler';
 import { styles } from './PriceCard.style';
 import colors from 'src/constants/colors';
 
-const PriceCard = () => {
+type Props = {
+  product?: {
+    id?: number;
+    title?: string;
+    price?: string;
+    category?: string;
+    description?: string;
+    image?: string;
+  };
+};
+
+const PriceCard = ({ product }: Props) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <EmptyCard>
@@ -21,7 +32,11 @@ const PriceCard = () => {
             color={colors.light.newText}
             style={styles.icon}
           />
-          <TextInput style={styles.inputWithIcon} placeholder="0" />
+          <TextInput
+            style={styles.inputWithIcon}
+            placeholder="0"
+            value={product ? product.price?.toString() : '0'}
+          />
         </View>
       </View>
       <View style={styles.inputContainer}>

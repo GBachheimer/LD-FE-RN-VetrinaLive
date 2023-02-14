@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, Text, View } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import TableRow from '../TableRow/TableRow';
 import TableHead from '../TableHead/TableHead';
 import TableFooter from '../TableFooter/TableFooter';
 import EmptyCard from 'src/components/EmptyCard/EmptyCard';
 import { styles } from './ProductsTable.style';
-import { getProducts } from 'src/api/getProducts';
 
 type ProductItem = {
-  id: number | undefined;
+  id: number;
   title: string | undefined;
   price: string | undefined;
   category: string | undefined;
@@ -17,41 +16,36 @@ type ProductItem = {
   image: string | undefined;
 };
 
-const ProductsTable = () => {
-  const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+type Props = {
+  hanldeAddProduct?: (id?: number) => void | undefined;
+  data: [];
+  isLoading: boolean;
+};
 
-  useEffect(() => {
-    getProducts(setData, setLoading);
-  }, []);
-
+const ProductsTable = ({ hanldeAddProduct, data, isLoading }: Props) => {
   return (
     <EmptyCard>
       <TableHead />
       <ScrollView
         style={styles.scrollView}
         contentContainerStyle={isLoading ? styles.content : null}>
-        {isLoading ? (
-          <ActivityIndicator size={100} />
-        ) : (
-          <>
-            {data.map((productItem: ProductItem, index) => {
-              if (!productItem.image) {
-                return;
-              }
-              return (
-                <View style={styles.row} key={productItem.image}>
-                  <TableRow
-                    key={productItem.id}
-                    image={productItem.image}
-                    name={productItem.title}
-                    price={productItem.price}
-                  />
-                </View>
-              );
-            })}
-          </>
-        )}
+        {data.map((productItem: ProductItem, index: number) => {
+          if (!productItem.image) {
+            return;
+          }
+          return (
+            <View style={styles.row} key={productItem.image}>
+              <TableRow
+                key={productItem.id}
+                id={productItem.id}
+                image={productItem.image}
+                name={productItem.title}
+                price={productItem.price}
+                hanldeAddProduct={hanldeAddProduct}
+              />
+            </View>
+          );
+        })}
       </ScrollView>
       <TableFooter />
     </EmptyCard>

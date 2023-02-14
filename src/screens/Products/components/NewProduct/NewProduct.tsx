@@ -7,9 +7,21 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { styles } from './NewProduct.style';
 import colors from 'src/constants/colors';
 
+type Props = {
+  hanldeAddProduct: (id?: number) => void;
+  product?: {
+    id?: number;
+    title?: string;
+    price?: string;
+    cathegory?: string;
+    description?: string;
+    image?: string;
+  };
+};
+
 const Tab = createMaterialTopTabNavigator();
 
-const NewProduct = ({ hanldeAddProduct }: any) => {
+const NewProduct = ({ hanldeAddProduct, product }: Props) => {
   return (
     <View style={styles.container}>
       <NewProductHeader hanldeAddProduct={hanldeAddProduct} />
@@ -20,7 +32,9 @@ const NewProduct = ({ hanldeAddProduct }: any) => {
           tabBarLabelStyle: { fontSize: 12 },
           tabBarStyle: styles.tabBarStyle,
         }}>
-        <Tab.Screen name="Info" component={InfoTab} />
+        <Tab.Screen name="Info">
+          {props => <InfoTab {...props} product={product} />}
+        </Tab.Screen>
         <Tab.Screen name="Varinats" component={VariantsTab} />
       </Tab.Navigator>
     </View>
