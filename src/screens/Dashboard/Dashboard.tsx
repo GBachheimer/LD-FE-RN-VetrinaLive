@@ -10,23 +10,22 @@ import VisitorsCard from './components/VisitorsCard/VisitorsCard';
 import OrdersCard from './components/OrdersCard/OrdersCard';
 import SupportCard from './components/SupportCard/SupportCard';
 import InviteFriendsCard from './components/InviteFriendsCard/InviteFriendsCard';
-import Faq from 'src/components/Test';
 
 const Dashboard = ({ navigation }: any) => {
-  return ( <Faq />
-    // <ScrollView
-    //   style={styles.container}
-    //   contentContainerStyle={styles.contentContainer}>
-    //   <SubHeader />
-    //   <ConfigureShopCard />
-    //   <VisitorsCard />
-    //   <OrdersCard />
-    //   <NewsCard />
-    //   <ExtensionsMarketplaceCard />
-    //   <AdsCard />
-    //   <SupportCard />
-    //   <InviteFriendsCard />
-    // </ScrollView>
+  return (
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}>
+      <SubHeader />
+      <ConfigureShopCard />
+      <VisitorsCard />
+      <OrdersCard />
+      <NewsCard />
+      <ExtensionsMarketplaceCard />
+      <AdsCard />
+      <SupportCard />
+      <InviteFriendsCard />
+    </ScrollView>
   );
 };
 

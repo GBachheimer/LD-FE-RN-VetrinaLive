@@ -6,8 +6,8 @@ import Dashboard from 'src/screens/Dashboard/Dashboard';
 import Product from 'src/screens/Products/Product';
 import Subscription from 'src/screens/Subscription/Subscription';
 import Payments from 'src/screens/Payments/Payments';
-import Orders from 'src/screens/Orders/Orders';
 import DrawerContent from './components/DrawerContent';
+import AndroidDrawer from 'src/screens/Orders/AndroidDrawer';
 
 const Drawer = createDrawerNavigator();
 
@@ -25,7 +25,7 @@ const DrawerNavigator = () => {
           headerRight: () => <HeaderRight />,
         })}>
         <Drawer.Screen name="Product" component={Product} />
-        <Drawer.Screen name="Orders" component={Orders} />
+        <Drawer.Screen name="Orders" component={AndroidDrawer} />
       </Drawer.Group>
       <Drawer.Screen name="Payments" component={Payments} />
       <Drawer.Screen name="Subscription" component={Subscription} />

@@ -2,6 +2,9 @@ import auth from '@react-native-firebase/auth';
 import { Alert } from 'react-native';
 
 export const handleResetPass = (email: string, navigation: any): void => {
+  if (email === '') {
+    Alert.alert('Please provide an email!');
+  }
   auth()
     .sendPasswordResetEmail(email)
     .then(() => {

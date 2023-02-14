@@ -7,7 +7,7 @@ const getRandomStatus = () => {
 
 const ordersStatus = () => {
   const array = [];
-  for (let i = 0; i < 30; ++i) {
+  for (let i = 0; i <= 30; ++i) {
     array.push(getRandomStatus());
   }
   return array;

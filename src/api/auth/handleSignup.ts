@@ -1,7 +1,15 @@
 import auth from '@react-native-firebase/auth';
 import { Alert } from 'react-native';
 
-export const handleSignup = (email: string, password: string) => {
+export const handleSignup = (
+  shopName: string,
+  email: string,
+  password: string,
+) => {
+  if (shopName === '') {
+    Alert.alert('Please provide a shop name!');
+    return;
+  }
   auth()
     .createUserWithEmailAndPassword(email, password)
     .catch(error => {

@@ -28,9 +28,11 @@ const ProductsTable = () => {
   return (
     <EmptyCard>
       <TableHead />
-      <ScrollView style={styles.scrollView}>
+      <ScrollView
+        style={styles.scrollView}
+        contentContainerStyle={isLoading ? styles.content : null}>
         {isLoading ? (
-          <ActivityIndicator />
+          <ActivityIndicator size={100} />
         ) : (
           <>
             {data.map((productItem: ProductItem, index) => {

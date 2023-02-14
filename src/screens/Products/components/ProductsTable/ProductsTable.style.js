@@ -12,4 +12,9 @@ export const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
   },
+  content: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+  },
 });

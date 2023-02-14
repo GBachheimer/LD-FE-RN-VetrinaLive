@@ -7,15 +7,15 @@ import { styles } from './SignUp.style';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
 import { handleSignup } from 'src/api/auth/handleSignup';
 
-const SignUp = ({navigation}: any): JSX.Element => {
-  const [fullName, setFullName] = useState('');
+const SignUp = ({ navigation }: any): JSX.Element => {
+  const [shopName, setShopName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleFullName = (
+  const handleshopName = (
     event: NativeSyntheticEvent<TextInputChangeEventData>,
   ): void => {
-    setFullName(event.nativeEvent.text);
+    setShopName(event.nativeEvent.text);
   };
 
   const handleEmail = (
@@ -41,7 +41,7 @@ const SignUp = ({navigation}: any): JSX.Element => {
           title="Create your e-commerce"
           subtitle="Try Vetrina Live for free in the next 7 days. Open a shop in few minutes! No credit card required."
           submitText="Create your shop"
-          submitAction={() => handleSignup(email, password)}
+          submitAction={() => handleSignup(shopName, email, password)}
           divider={true}
           extraOptions={true}
           footerText1="Do you have an account?"
@@ -49,9 +49,9 @@ const SignUp = ({navigation}: any): JSX.Element => {
           footerAction={() => navigation.navigate('Login')}>
           <TextInput
             style={styles.textInput}
-            placeholder="Name and Surname"
-            value={fullName}
-            onChange={handleFullName}
+            placeholder="Shop name"
+            value={shopName}
+            onChange={handleshopName}
           />
           <TextInput
             style={styles.textInput}

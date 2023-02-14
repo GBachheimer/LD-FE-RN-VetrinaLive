@@ -7,11 +7,12 @@ import ShippingTab from '../ShippingTab/ShippingTab';
 import DrawerHeader from '../DrawerHeader/DrawerHeader';
 import { styles } from './DrawerTabs.style';
 import colors from 'src/constants/colors';
+import { User } from 'src/screens/Orders/AndroidDrawer';
 
 type Props = {
   navigation?: any;
   closeDrawer?: () => void | undefined;
-  user?: object | undefined;
+  user: User;
 };
 
 const Tab = createMaterialTopTabNavigator();

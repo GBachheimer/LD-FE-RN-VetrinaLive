@@ -1,19 +1,21 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import DetailsCard from './DetailsCard/DetailsCard';
 import GeneralInfomationCard from './GenInfoCard/GenInfoCard';
 import PriceCard from './PriceCard/PriceCard';
 import ProductTypeCard from './ProductTypeCard/ProductTypeCard';
 
-const InfoTab = () => {
+const InfoTab = ({ navigation }: any) => {
   return (
-    <ScrollView style={styles.container}>
-      <GeneralInfomationCard />
-      <PriceCard />
-      <DetailsCard />
-      <ProductTypeCard />
-    </ScrollView>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <ScrollView style={styles.container}>
+        <GeneralInfomationCard />
+        <PriceCard />
+        <DetailsCard />
+        <ProductTypeCard />
+      </ScrollView>
+    </View>
   );
 };
 
